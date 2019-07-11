@@ -88,4 +88,4 @@ plt.show()
 ```
 
 
-![raw_data](https://github.com/VanAurum/p1/images/raw_data.png)
+![raw_data](/images/raw_data.png)
