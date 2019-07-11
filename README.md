@@ -169,3 +169,36 @@ ax2.set_ylabel('Frequency Domain (Spectrum) Magnitude')
 
 <br>
 <br>
+
+The next thing I want to do is plot each of these spectra on a two dimensional plot where each dimension is one of the two dominant frequency bands - roughly __0.0050 - 0.006__ (band1) and __0.14-0.16__ (band2).
+
+```python
+positive_frequencies = freqs[i]
+band1 = np.where(np.logical_and(positive_frequencies>=0.02, positive_frequencies<=0.08))
+band2 = np.where(np.logical_and(positive_frequencies>=0.14, positive_frequencies<=0.18))
+
+x = []
+y = [] 
+for spectrum in spectra:
+    x.append(np.mean(spectrum[band1]))
+    y.append(np.mean(spectrum[band2])) 
+
+fig3, ax3 = plt.subplots()
+for spectra_id, color in enumerate(['red','blue','green']):
+    mask = list(np.where(predictions==spectra_id)[0])
+    for elem in mask:
+        ax3.scatter(x[elem], y[elem], color=color)
+
+ax3.set_ylim(0.000, 0.0025)
+ax3.set_xlim(0.0005, 0.0045)
+ax3.set_xlabel('Mean Frequency Amplitute in band 0.02-0.08')
+ax3.set_ylabel('Mean Frequency Amplitute in band 0.14-0.18')    
+```
+
+<br>
+<br>
+
+![frequency_clustered](/images/cluster.png)
+
+<br>
+<br>
