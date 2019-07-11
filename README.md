@@ -96,8 +96,39 @@ plt.show()
 Because the body of the signals begins and ends in roughly the same location, I decided to trim them from index 125 to index 800 to arrive at the following.
 
 <br>
+<br>
 
 ![windowed_raw_data](/images/windowed_raw.png)
+
+<br>
+<br>
+
+### Applying Fourier Transform to Obtain Frequency Spectrum of Each Signal
+
+The next step in the process was to convert each signal to the frequency domain which can then be used in the KMeans clustering algorithm.  This was achieved as follows:
+
+```python
+
+freqs = sp.fftpack.fftfreq(675)
+spectra = []
+fig, ax = plt.subplots()
+
+# Because frequency domain is symetrical, take only positive frequencies
+i = freqs > 0
+for signal in data:
+    X = sp.fftpack.fft(signal)  
+    ax.plot(freqs[i], np.abs(X)[i])
+    spectra.append(np.abs(X)[i])
+
+ax.set_xlabel('Frequency')
+ax.set_ylabel('Frequency Domain (Spectrum) Magnitude')
+ax.set_title('Frequency Domain Representation of Each Signal')
+```
+
+<br>
+<br>
+
+![frequency_domain](/images/frequency_domain.png)
 
 <br>
 <br>
