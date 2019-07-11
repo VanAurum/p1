@@ -198,7 +198,7 @@ ax3.set_ylabel('Mean Frequency Amplitute in band 0.14-0.18')
 <br>
 <br>
 
-![frequency_clustered](/images/cluster.png)
+![frequency_clustered](/images/scatter.png)
 
 <br>
 <br>
