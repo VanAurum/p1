@@ -205,6 +205,7 @@ ax3.set_title('Mean Signal Amplitude by Band1 and Band2')
 <br>
 <br>
 The indexes of these spectra correspond to the files names accordingly:
+
 ```
 (0,  '2018-10-15_11-31-41-PASSTHROUGH-12-59-31.npy')
 (1,  '2018-10-18_14-25-40-PASSTHROUGH-12-59-31.npy')
