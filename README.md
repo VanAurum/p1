@@ -188,11 +188,13 @@ for spectra_id, color in enumerate(['red','blue','green']):
     mask = list(np.where(predictions==spectra_id)[0])
     for elem in mask:
         ax3.scatter(x[elem], y[elem], color=color)
+        ax3.text(x[elem]+0.00003, y[elem], elem, fontsize=12)
 
 ax3.set_ylim(0.000, 0.0025)
 ax3.set_xlim(0.0005, 0.0045)
 ax3.set_xlabel('Mean Frequency Amplitute in band 0.02-0.08')
-ax3.set_ylabel('Mean Frequency Amplitute in band 0.14-0.18')    
+ax3.set_ylabel('Mean Frequency Amplitute in band 0.14-0.18')
+ax3.set_title('Mean Signal Amplitude by Band1 and Band2') 
 ```
 
 <br>
@@ -202,3 +204,46 @@ ax3.set_ylabel('Mean Frequency Amplitute in band 0.14-0.18')
 
 <br>
 <br>
+The indexes of these spectra correspond to the files names accordingly:
+```
+(0,  '2018-10-15_11-31-41-PASSTHROUGH-12-59-31.npy')
+(1,  '2018-10-18_14-25-40-PASSTHROUGH-12-59-31.npy')
+(2,  '2018-10-15_11-30-03-PASSTHROUGH-12-59-31.npy')
+(3,  '2018-10-15_11-40-25-PASSTHROUGH-12-59-31.npy')
+(4,  '2018-10-18_14-20-19-PASSTHROUGH-12-59-31.npy')
+(5,  '2018-10-15_11-55-18-PASSTHROUGH-12-59-31.npy')
+(6,  '2018-10-18_14-10-19-PASSTHROUGH-12-59-31.npy')
+(7,  '2018-10-15_11-36-36-PASSTHROUGH-12-59-31.npy')
+(8,  '2018-10-15_11-53-51-PASSTHROUGH-12-59-31.npy')
+(9,  '2018-10-18_14-56-57-PASSTHROUGH-12-59-31.npy')
+(10, '2018-10-18_14-06-45-PASSTHROUGH-12-59-31.npy')
+(11, '2018-10-18_14-29-51-PASSTHROUGH-12-59-31.npy')
+(12, '2018-10-15_12-02-56-PASSTHROUGH-12-59-31.npy')
+(13, '2018-10-15_11-38-01-PASSTHROUGH-12-59-31.npy')
+(14, '2018-10-18_14-07-48-PASSTHROUGH-12-59-31.npy')
+(15, '2018-10-18_14-30-51-PASSTHROUGH-12-59-31.npy')
+(16, '2018-10-18_14-00-47-PASSTHROUGH-12-59-31.npy')
+(17, '2018-10-15_11-44-00-PASSTHROUGH-12-59-31.npy')
+(18, '2018-10-18_13-58-38-PASSTHROUGH-12-59-31.npy')
+(19, '2018-10-18_14-19-14-PASSTHROUGH-12-59-31.npy')
+(20, '2018-10-15_11-48-43-PASSTHROUGH-12-59-31.npy')
+(21, '2018-10-15_11-39-18-PASSTHROUGH-12-59-31.npy')
+(22, '2018-10-15_11-45-03-PASSTHROUGH-12-59-31.npy')
+(23, '2018-10-18_14-32-01-PASSTHROUGH-12-59-31.npy')
+(24, '2018-10-18_14-26-39-PASSTHROUGH-12-59-31.npy')
+(25, '2018-10-15_11-56-44-PASSTHROUGH-12-59-31.npy')
+(26, '2018-10-18_14-54-45-PASSTHROUGH-12-59-31.npy')
+(27, '2018-10-15_12-05-27-PASSTHROUGH-12-59-31.npy')
+(28, '2018-10-18_14-35-02-PASSTHROUGH-12-59-31.npy')
+(29, '2018-10-18_14-18-15-PASSTHROUGH-12-59-31.npy')
+(30, '2018-10-18_14-55-53-PASSTHROUGH-12-59-31.npy')
+(31, '2018-10-18_14-38-29-PASSTHROUGH-12-59-31.npy')
+(32, '2018-10-18_14-13-11-PASSTHROUGH-12-59-31.npy')
+(33, '2018-10-18_14-05-15-PASSTHROUGH-12-59-31.npy')
+(34, '2018-10-18_14-24-33-PASSTHROUGH-12-59-31.npy')
+(35, '2018-10-18_14-02-47-PASSTHROUGH-12-59-31.npy')
+(36, '2018-10-18_14-11-51-PASSTHROUGH-12-59-31.npy')
+(37, '2018-10-15_12-04-10-PASSTHROUGH-12-59-31.npy')
+(38, '2018-10-15_11-33-03-PASSTHROUGH-12-59-31.npy')
+(39, '2018-10-18_14-36-01-PASSTHROUGH-12-59-31.npy')
+```
