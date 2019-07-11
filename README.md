@@ -87,6 +87,5 @@ plt.title('Raw data plotted on same scale')
 plt.show()
 ```
 
-<br>
-![process ><](https://github.com/VanAurum/p1/tree/master/images/raw_data.png)
-<br> 
+
+![process](https://github.com/VanAurum/p1/tree/master/images/raw_data.png)
