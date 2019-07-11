@@ -132,3 +132,27 @@ ax.set_title('Frequency Domain Representation of Each Signal')
 
 <br>
 <br>
+
+### Apply KMeans Clustering Algorithm
+
+```python
+from sklearn.cluster import KMeans
+kmeans = KMeans(3, max_iter = 1000, n_init = 100)
+kmeans.fit_transform(spectra)
+predictions = kmeans.predict(spectra)
+predictions
+```
+
+Output:
+```
+array([1, 1, 2, 1, 0, 1, 2, 1, 2, 0, 0, 2, 2, 1, 0, 1, 0, 2, 2, 0, 0, 2,
+       1, 2, 0, 1, 2, 0, 2, 2, 0, 1, 0, 2, 2, 0, 0, 1, 2, 1], dtype=int32)
+```
+
+<br>
+<br>
+
+![frequency_domain](/images/frequency_domain.png)
+
+<br>
+<br>
