@@ -88,4 +88,4 @@ plt.show()
 ```
 
 
-![process](https://github.com/VanAurum/p1/tree/master/images/raw_data.png?raw=true)
+![process](https://github.com/VanAurum/p1/images/raw_data.png?raw=true)
