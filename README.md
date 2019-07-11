@@ -88,5 +88,5 @@ plt.show()
 ```
 
 <br>
-![process ><](/images/raw_data.png){: .center-image }
+![process ><](images/raw_data.png)
 <br> 
