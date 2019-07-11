@@ -69,7 +69,7 @@ The file names were as follows:
 
 The first thing I decided to do was to visualize the data provided in each `.npy` file.  Visually, the signals appear to be roughly the same type - my suspicion is that they're intended to mimic some sort of radio or radar reflection signal.  To visualize the raw signals I did the following: 
 
-{% highlight python%}
+```python
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -85,8 +85,8 @@ for file in files:
     plt.plot(x)
 plt.title('Raw data plotted on same scale')
 plt.show()
-{% endhighlight%}
+```
 
 <br>
-![process ><](/data/gcp_kubernetes/raw_data.png){: .center-image }
+![process ><](/images/raw_data.png){: .center-image }
 <br> 
