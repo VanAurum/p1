@@ -88,5 +88,5 @@ plt.show()
 ```
 
 <br>
-![process ><](images/raw_data.png)
+![process ><](https://github.com/VanAurum/p1/tree/master/images/raw_data.png)
 <br> 
