@@ -88,11 +88,16 @@ plt.show()
 ```
 
 <br>
+
 ![raw_data](/images/raw_data.png)
+
 <br>
 <br>
 Because the body of the signals begins and ends in roughly the same location, I decided to trim them from index 125 to index 800 to arrive at the following.
+
 <br>
+
 ![windowed_raw_data](/images/windowed_raw.png)
+
 <br>
 <br>
