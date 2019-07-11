@@ -149,10 +149,23 @@ array([1, 1, 2, 1, 0, 1, 2, 1, 2, 0, 0, 2, 2, 1, 0, 1, 0, 2, 2, 0, 0, 2,
        1, 2, 0, 1, 2, 0, 2, 2, 0, 1, 0, 2, 2, 0, 0, 1, 2, 1], dtype=int32)
 ```
 
+### Color coding the spectra according to their cluster
+```python
+fig2, ax2 = plt.subplots()
+for spectra_id, color in enumerate(['red','blue','green']):
+    mask = list(np.where(predictions==spectra_id)[0])
+    print(mask)
+    for elem in mask:
+        ax2.plot(freqs[i], spectra[elem], color=color)
+
+ax2.set_xlabel('Frequency')
+ax2.set_ylabel('Frequency Domain (Spectrum) Magnitude')
+```
+
 <br>
 <br>
 
-![frequency_domain](/images/frequency_domain.png)
+![frequency_clustered](/images/frequency_clustered.png)
 
 <br>
 <br>
