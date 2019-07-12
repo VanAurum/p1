@@ -153,6 +153,7 @@ fig, ax = plt.subplots()
 
 # Because frequency domain is symetrical, take only positive frequencies
 i = freqs > 0
+
 for signal in data:
     X = sp.fftpack.fft(signal)  
     ax.plot(freqs[i], np.abs(X)[i])
@@ -177,6 +178,7 @@ The next thing I did was to apply the KMeans clustering algorithm to cluster the
 
 ```python
 from sklearn.cluster import KMeans
+
 kmeans = KMeans(3, max_iter = 1000, n_init = 100)
 kmeans.fit_transform(spectra)
 predictions = kmeans.predict(spectra)
@@ -195,6 +197,7 @@ By re-plotting each spectra with a color coding according to its cluster, we can
 
 ```python
 fig2, ax2 = plt.subplots()
+
 for spectra_id, color in enumerate(['red','blue','green']):
     mask = list(np.where(predictions == spectra_id)[0])
     for elem in mask:
