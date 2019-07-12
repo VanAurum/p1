@@ -68,7 +68,17 @@ My approach to solving this problem was as follows:
 
 * Window the time series signal to the active components.
 * Get frequency domain representation for each of the 40 windowed signals.
-* 
+* Fit a KMeans clustering algorithm to the 40 frequency spectra using 3 clusters.  
+
+### Reasoning for Selecting KMeans 
+
+At a high-level, I looked at using three types of clustering algorithms:
+
+* Hierarchical 
+* Density-based 
+* KMeans   
+
+__Hierarchical clustering__ 
 
 
 ### Data Exploration 
@@ -141,6 +151,8 @@ ax.set_title('Frequency Domain Representation of Each Signal')
 
 ### Apply KMeans Clustering Algorithm
 
+The next thing I did was to apply the KMeans clustering algorithm to cluster the data into three groups.  I 
+
 ```python
 from sklearn.cluster import KMeans
 kmeans = KMeans(3, max_iter = 1000, n_init = 100)
@@ -156,6 +168,9 @@ array([1, 1, 2, 1, 0, 1, 2, 1, 2, 0, 0, 2, 2, 1, 0, 1, 0, 2, 2, 0, 0, 2,
 ```
 
 ### Color coding the spectra according to their cluster
+
+By re-plotting each spectra with a color coding according to its cluster, we can see the differentiation start to appear when all of the spectra are plotted together.  
+
 ```python
 fig2, ax2 = plt.subplots()
 for spectra_id, color in enumerate(['red','blue','green']):
