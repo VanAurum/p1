@@ -1,5 +1,4 @@
-# P1
-Coding assessment
+# P1 Coding Assessment
 
 ### Problem Statement
 
