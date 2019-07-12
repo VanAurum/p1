@@ -78,7 +78,16 @@ At a high-level, I looked at using three types of clustering algorithms:
 * Density-based 
 * KMeans   
 
-__Hierarchical clustering__ 
+__Hierarchical clustering__ could be a decent alternative in this applications, but is best suited to finding embedded structure within clusters. Hierarchical clustering is great when all you know is that your data can likely be subdivided into groups, but there is additional interest in the substructure of those groups.  Since this problem explicitly asks for three clusters, hierarchical clustering seemed like an inferior choice to an explicit means-based clustering method.
+
+__Density-based clustering__ looks at tightly-packed groups of data and assumes everything else is noise.  Because I chose to cluster the frequency spectra data, this method isn't really appropriate because the density variation on a 1-D or 2-D scale is similar, if not the same.  The other pitfall here is that density based algorithms assume data far from clusters are just noise.  In this application we are given individual signals to clusters - each signal is presumably meaningful and represents something meaningful.  Because of this, treating outliers as noise doesn't seem appropriate.  
+
+__Kmeans clustering__ was ultimately arrived at for the following reasons:
+* Where hierarchical discovers embedded structure and density-based methods excel at finding unknown numbers clusters with similar density, both of these methods do a poor job of reaching a cluster "consensus" in a full dataset.  KMeans will divide your data into N-groups even if your data is uniform (which is a benefit and a pitfall depending on the application).
+* KMeans considers every point in the dataset as meaningful.  
+* Our frequency data has a consistent amplitude profile for each signal, which reduces the chances of KMeans "trapping" itself in a local minima.  
+* Our data is not sparse.  
+* It is clear from the frequency data that the dominant distinction between the signals is the amplitudes around the lower band.  Kmeans should perform well in seperating these for us.  
 
 
 ### Data Exploration 
