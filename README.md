@@ -1,6 +1,9 @@
 # P1 Coding Assessment
 
-### Problem Statement
+#### Table of Contents
+* [Problem Statement](#problem)
+
+### Problem Statement <a name='problem'></a>
 
 A zip file was provided with 40 files - all of them `.npy` object files (Numpy objects). The following instructions were provided:
 
@@ -198,6 +201,8 @@ ax2.set_ylabel('Frequency Domain (Spectrum) Magnitude')
 
 <br>
 <br>
+
+### Plotting clusters against the dominant frequency bands
 
 The next thing I want to do is plot each of these spectra on a two dimensional plot where each dimension is one of the two dominant frequency bands - roughly __0.0050 - 0.006__ (band1) and __0.14-0.16__ (band2).
 
