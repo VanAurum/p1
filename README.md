@@ -197,7 +197,6 @@ By re-plotting each spectra with a color coding according to its cluster, we can
 fig2, ax2 = plt.subplots()
 for spectra_id, color in enumerate(['red','blue','green']):
     mask = list(np.where(predictions==spectra_id)[0])
-    print(mask)
     for elem in mask:
         ax2.plot(freqs[i], spectra[elem], color=color)
 
