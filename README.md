@@ -1,7 +1,14 @@
 # P1 Coding Assessment
 
-#### Table of Contents
+## Table of Contents
 * [Problem Statement](#problem)
+* [High-Level Solution Methodology](#methodology)
+* [Reason for selecting KMeans Clustering](#reasons)
+* [Data Exploration](#exploration)
+* [Applying Fourier Transform to Obtain Frequency Spectrum of Each Signal](#fourier)
+* [Apply KMeans Clustering to Spectra](#kmeans)
+* [Color coding the spectra according to their cluster](#color)
+* [Plotting clusters against the dominant frequency bands](#plot)
 
 ### Problem Statement <a name='problem'></a>
 
@@ -64,7 +71,7 @@ The file names were as follows:
  '2018-10-18_14-36-01-PASSTHROUGH-12-59-31.npy'
 ```
 
-### High-Level Solution Methodology 
+### High-Level Solution Methodology <a name='methodology'></a>
 
 My approach to solving this problem was as follows: 
 
@@ -72,7 +79,7 @@ My approach to solving this problem was as follows:
 * Get frequency domain representation for each of the 40 windowed signals.
 * Fit a KMeans clustering algorithm to the 40 frequency spectra using 3 clusters.  
 
-### Reasoning for Selecting KMeans 
+### Reasoning for Selecting KMeans <a name='reasons'></a>
 
 At a high-level, I looked at using three types of clustering algorithms:
 
@@ -92,7 +99,7 @@ __Kmeans clustering__ was ultimately arrived at for the following reasons:
 * It is clear from the frequency data that the dominant distinction between the signals is the amplitudes around the lower band.  Kmeans should perform well in seperating these for us.  
 
 
-### Data Exploration 
+### Data Exploration <a name='exploration'></a>
 
 The first thing I decided to do was to visualize the data provided in each `.npy` file.  Visually, the signals appear to be roughly the same type - my suspicion is that they're intended to mimic some sort of radio or radar reflection signal.  To visualize the raw signals I did the following: 
 
@@ -130,7 +137,7 @@ Because the body of the signals begins and ends in roughly the same location, I 
 <br>
 <br>
 
-### Applying Fourier Transform to Obtain Frequency Spectrum of Each Signal
+### Applying Fourier Transform to Obtain Frequency Spectrum of Each Signal <a name='fourier'></a>
 
 The next step in the process was to convert each signal to the frequency domain which can then be used in the KMeans clustering algorithm.  This was achieved as follows:
 
@@ -160,7 +167,7 @@ ax.set_title('Frequency Domain Representation of Each Signal')
 <br>
 <br>
 
-### Apply KMeans Clustering Algorithm
+### Apply KMeans Clustering Algorithm <a name='kmeans'></a>
 
 The next thing I did was to apply the KMeans clustering algorithm to cluster the data into three groups.  I 
 
@@ -178,7 +185,7 @@ array([1, 1, 2, 1, 0, 1, 2, 1, 2, 0, 0, 2, 2, 1, 0, 1, 0, 2, 2, 0, 0, 2,
        1, 2, 0, 1, 2, 0, 2, 2, 0, 1, 0, 2, 2, 0, 0, 1, 2, 1], dtype=int32)
 ```
 
-### Color coding the spectra according to their cluster
+### Color coding the spectra according to their cluster <a name='color'></a>
 
 By re-plotting each spectra with a color coding according to its cluster, we can see the differentiation start to appear when all of the spectra are plotted together.  
 
@@ -202,7 +209,7 @@ ax2.set_ylabel('Frequency Domain (Spectrum) Magnitude')
 <br>
 <br>
 
-### Plotting clusters against the dominant frequency bands
+### Plotting clusters against the dominant frequency bands <a name='plot'></a>
 
 The next thing I want to do is plot each of these spectra on a two dimensional plot where each dimension is one of the two dominant frequency bands - roughly __0.0050 - 0.006__ (band1) and __0.14-0.16__ (band2).
 
