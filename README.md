@@ -64,6 +64,12 @@ The file names were as follows:
 
 ### High-Level Solution Methodology 
 
+My approach to solving this problem was as follows: 
+
+* Window the time series signal to the active components.
+* Get frequency domain representation for each of the 40 windowed signals.
+* 
+
 
 ### Data Exploration 
 
