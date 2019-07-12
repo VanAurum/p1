@@ -215,7 +215,7 @@ ax2.set_ylabel('Frequency Domain (Spectrum) Magnitude')
 
 ### Plotting clusters against the dominant frequency bands <a name='plot'></a>
 
-The next thing I want to do is plot each of these spectra on a two dimensional plot where each dimension is one of the two dominant frequency bands - roughly __0.020 - 0.008__ (band1) and __0.14-0.18__ (band2).
+The next thing I want to do is plot each of these spectra on a two dimensional plot where each dimension is one of the two dominant frequency bands - roughly __0.02 - 0.08__ (band1) and __0.14-0.18__ (band2).
 
 ```python
 positive_frequencies = freqs[i]
@@ -226,6 +226,8 @@ band2 = np.where(np.logical_and(positive_frequencies>=0.14, positive_frequencies
 
 x = []
 y = [] 
+
+# For each spectrum, find the mean amplitude within each band.
 for spectrum in spectra:
     x.append(np.mean(spectrum[band1]))
     y.append(np.mean(spectrum[band2])) 
